@@ -22,6 +22,32 @@ public class Programa {
         System.out.print("Quantidade de espetinhos: ");
         qtdEpt = sc.nextInt();
 
+        qtdCvj *= 5.00;
+        qtdRft *= 3.00;
+        qtdEpt *= 7.00;
+
+        if (sexo == 'F' || sexo == 'f') {
+            ingresso = 8.00;
+        } else {
+            ingresso = 10.00;
+        }
+        consumo = qtdCvj + qtdRft + qtdEpt;
+        if (consumo < 30.00) {
+            total = consumo + ingresso + 4.00;
+            couvert = "Couvert = R$ 4.00";
+
+        }
+
+        else {
+            total = consumo + ingresso;
+            couvert = "Isento de Couvert";
+        }
+        System.out.println();
+        System.out.printf("Consumo = R$ %.2f%n", consumo);
+        System.out.println(couvert);
+        System.out.printf("Ingresso = R$ %.2f%n", ingresso);
+        System.out.printf("Valor a pagar = R$ %.2f%n", total);
+
         sc.close();
     }
 }
